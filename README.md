@@ -63,7 +63,7 @@ This is a Node.js-based WhatsApp bot built using **@whiskeysockets/baileys** and
    (In the code provided, the key is hardcoded—consider moving it to `.env` for security.)
 4. Run the bot:
    ```bash
-   node index.js
+   node app.js
    ```
 5. Scan the QR code in the terminal to connect your WhatsApp.
 
