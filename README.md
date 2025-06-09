@@ -1,4 +1,3 @@
-
 # 🤖 Baileys WhatsApp Bot
 
 This is a Node.js-based WhatsApp bot built using **@whiskeysockets/baileys** and **OpenAI GPT-4o** to handle customer interactions with Somali language support! 🚀
@@ -7,20 +6,23 @@ This is a Node.js-based WhatsApp bot built using **@whiskeysockets/baileys** and
 
 ## 💡 How It Works
 
-1. **Authentication**  
-   - Uses Baileys' `useMultiFileAuthState` to store authentication data **locally** in a folder called `auth_info`.  
+1. **Authentication**
+
+   - Uses Baileys' `useMultiFileAuthState` to store authentication data **locally** in a folder called `auth_info`.
    - This means the WhatsApp session is saved on your file system, making it easier to reconnect without scanning the QR every time.
 
-2. **Connecting to WhatsApp**  
+2. **Connecting to WhatsApp**
+
    - Generates a QR code in the terminal for linking your WhatsApp account.
    - Listens for new messages using Baileys’ `messages.upsert` event.
    - When a new message is received, it grabs the message text and sends it to the OpenAI API for a smart reply.
 
-3. **AI Responses**  
-   - Uses OpenAI’s GPT-4o to generate Somali-language responses tailored to business inquiries.  
+3. **AI Responses**
+
+   - Uses OpenAI’s GPT-4o to generate Somali-language responses tailored to business inquiries.
    - Responses are designed to guide customers through bot-building services offered by **JiheeyeBots** (you can customize this pitch).
 
-4. **Express Server**  
+4. **Express Server**
    - Runs a lightweight web server on port `3000` (or whatever `PORT` is set in `.env`).
    - Provides a basic GET endpoint at `/` to confirm the bot is running.
 
@@ -28,13 +30,14 @@ This is a Node.js-based WhatsApp bot built using **@whiskeysockets/baileys** and
 
 ## 📂 Data Storage
 
-| Data            | Where Stored?               |
-|-----------------|-----------------------------|
-| WhatsApp Auth   | `./auth_info` folder (JSON) |
-| Messages        | Not saved anywhere—just processed on the fly. |
-| API Key         | Stored in `.env` file.      |
+| Data          | Where Stored?                                 |
+| ------------- | --------------------------------------------- |
+| WhatsApp Auth | `./auth_info` folder (JSON)                   |
+| Messages      | Not saved anywhere—just processed on the fly. |
+| API Key       | Stored in `.env` file.                        |
 
-**Important:**  
+**Important:**
+
 - **No user messages or data are stored permanently**. Everything except WhatsApp auth is processed in-memory.
 - Make sure `.env` and `auth_info` are secure and not committed to version control!
 
@@ -42,11 +45,13 @@ This is a Node.js-based WhatsApp bot built using **@whiskeysockets/baileys** and
 
 ## 🔑 Setup
 
-1. Clone this repo:
+1. Clone this repo & Change into the project directory:
    ```bash
    git clone https://github.com/Alaaja8899/baileys-bot.git
-   cd baileys-bot
-   ``` ```
+   ```
+   ```bash
+      cd baileys-bot
+   ```
 2. Install dependencies:
    ```bash
    npm install
