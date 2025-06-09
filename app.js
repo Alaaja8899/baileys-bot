@@ -101,6 +101,9 @@ connectToWhatsApp();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+
+// Health check endpoint to verify the bot server is running
 app.get('/', (req, res) => {
     res.send('🤖 Baileys WhatsApp bot is up and running!');
 });
